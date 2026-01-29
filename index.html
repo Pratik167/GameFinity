@@ -19,7 +19,7 @@
 
   <section class="games-container">
 
-    <!-- Game 1 -->
+    <!--Game 1-->
     <a href="https://pratik167.github.io/Sadak_Fighter/" target="_blank" class="game-card">
       <img src="SadakFighters.png" alt="Sadak Fighters">
       <div class="game-info">
@@ -28,7 +28,7 @@
       </div>
     </a>
 
-    <!-- Game 2 -->
+    <!--Game 2-->
     <a href="https://pratik167.github.io/antarisk-shooter/" target="_blank" class="game-card">
       <img src="antariskShooter.png" alt="Antarisk Shooter">
       <div class="game-info">
@@ -37,7 +37,7 @@
       </div>
     </a>
 
-    <!-- Game 3 -->
+    <!--Game 3-->
     <a href="https://pratik167.github.io/eggGame/" target="_blank" class="game-card">
       <img src="eggCatcher.png" alt="Egg Catcher">
       <div class="game-info">
@@ -46,7 +46,7 @@
       </div>
     </a>
 
-    <!-- Game 4 -->
+    <!--Game 4-->
     <a href="https://pratik167.github.io/PONG_GAME/" target="_blank" class="game-card">
       <img src="pong.png" alt="Pong">
       <div class="game-info">
@@ -55,9 +55,18 @@
       </div>
     </a>
 
+    <!--Game 5-->
+    <a href="https://sujalbaidhya.github.io/flapbir/" target="_blank" class="game-card">
+      <img src="UdhneChara.png" alt="Pong">
+      <div class="game-info">
+        <h3>Udhne Chara</h3>
+        <p>Just Some Udhne Chara</p>
+      </div>
+    </a>
+
   </section>
 
-  <!-- Background Music -->
+  <!--bg Music-->
   <audio id="bgMusic" autoplay loop>
     <source src="bgAudio/1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -69,16 +78,16 @@
   </footer>
 
   <script>
-    const musicBtn = document.getElementById('musicBtn');
-    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn=document.getElementById('musicBtn');
+    const bgMusic=document.getElementById('bgMusic');
 
-    musicBtn.addEventListener('click', () => {
+    musicBtn.addEventListener('click',()=>{
       if(bgMusic.paused){
         bgMusic.play();
-        musicBtn.textContent = 'Pause Music';
-      } else {
+        musicBtn.textContent='Pause Music';
+      }else{
         bgMusic.pause();
-        musicBtn.textContent = 'Play Music';
+        musicBtn.textContent='Play Music';
       }
     });
   </script>
