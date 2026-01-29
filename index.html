@@ -7,7 +7,8 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -20,7 +21,7 @@
 
     <!-- Game 1 -->
     <a href="https://pratik167.github.io/Sadak_Fighter/" target="_blank" class="game-card">
-      <img src="SadakFighters.png" alt="Game 1">
+      <img src="SadakFighters.png" alt="Sadak Fighters">
       <div class="game-info">
         <h3>Sadak Fighters</h3>
         <p>Fast-paced 2D fighting game built with JavaScript.</p>
@@ -29,7 +30,7 @@
 
     <!-- Game 2 -->
     <a href="https://pratik167.github.io/antarisk-shooter/" target="_blank" class="game-card">
-      <img src="antariskShooter.png" alt="Game 2">
+      <img src="antariskShooter.png" alt="Antarisk Shooter">
       <div class="game-info">
         <h3>Antarisk Shooter</h3>
         <p>Defend Against The Space Aliens</p>
@@ -38,7 +39,7 @@
 
     <!-- Game 3 -->
     <a href="https://pratik167.github.io/eggGame/" target="_blank" class="game-card">
-      <img src="eggCatcher.png" alt="Game 3">
+      <img src="eggCatcher.png" alt="Egg Catcher">
       <div class="game-info">
         <h3>Egg Catcher</h3>
         <p>Simply Catch Eggs in a Bucket</p>
@@ -47,19 +48,40 @@
 
     <!-- Game 4 -->
     <a href="https://pratik167.github.io/PONG_GAME/" target="_blank" class="game-card">
-      <img src="pong.png" alt="Game 3">
+      <img src="pong.png" alt="Pong">
       <div class="game-info">
         <h3>Pong</h3>
         <p>Old Arcade Pong</p>
       </div>
     </a>
-    
 
   </section>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="bgAudio/1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="musicBtn">Pause Music</button>
 
   <footer>
     <p>© 2026 <span>GameFinity</span> | JavaScript Game Development Project</p>
   </footer>
+
+  <script>
+    const musicBtn = document.getElementById('musicBtn');
+    const bgMusic = document.getElementById('bgMusic');
+
+    musicBtn.addEventListener('click', () => {
+      if(bgMusic.paused){
+        bgMusic.play();
+        musicBtn.textContent = 'Pause Music';
+      } else {
+        bgMusic.pause();
+        musicBtn.textContent = 'Play Music';
+      }
+    });
+  </script>
 
 </body>
 </html>
