@@ -1,0 +1,65 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle, #0b1d05 0%, #030a02 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', monospace;
+  color: aliceblue;
+}
+
+/* Game wrapper */
+.game-container {
+  position: relative;
+  text-align: center;
+}
+
+/* Canvas */
+#canvas {
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+  background-color: #000;
+  margin-top: 60px;
+}
+
+/* Title */
+.title {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48px;
+  letter-spacing: 6px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* Scores */
+.score {
+  position: absolute;
+  top: 20px;
+  font-size: 28px;
+}
+
+.score.p1 {
+  left: 120px;
+}
+
+.score.p2 {
+  right: 120px;
+}
+
+/* Music hint */
+.music-hint {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
