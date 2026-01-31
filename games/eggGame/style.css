@@ -1,0 +1,47 @@
+* {
+  margin: 10;
+  padding: 0;
+}
+
+#canvas {
+  border: 3px solid black;
+  background-image: url("farm.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#score{
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  border: 2px solid;
+  top:20px;
+  left:900;
+  font-size: 30px;
+}
+#life{
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  border: 2px solid;
+  top:20px;
+  left:20;
+  font-size: 30px;
+}
+#eggSpeed{
+  width: 165px;
+  height: 40px;
+  position: absolute;
+  border: 2px solid;
+  top:20px;
+  left:141;
+  font-size: 30px;
+}
+#bucketSpeed{
+  width: 130px;
+  height: 40px;
+  position: absolute;
+  border: 2px solid;
+  top:20px;
+  left:769;
+  font-size: 30px;
+}
