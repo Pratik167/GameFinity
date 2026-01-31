@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GameFinity | JS Game Hub</title>
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
@@ -50,7 +51,7 @@
     </a>
 
     <a href="https://sujalbaidhya.github.io/flapbir/" target="_blank" class="game-card">
-      <img src="Assets/pngs/UdhneChara.png" alt="Pong">
+      <img src="Assets/pngs/UdhneChara.png" alt="Udhne Chara">
       <div class="game-info">
         <h3>Udhne Chara</h3>
         <p>Just Some Udhne Chara</p>
@@ -58,29 +59,66 @@
     </a>
 
   </section>
-  <audio id="bgMusic" autoplay loop>
-    <source src="Assets/bgAudio/1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  <button id="musicBtn">Pause Music</button>
+
+  <!--Music Controls-->
+  <div class="music-controls">
+    <button id="musicBtn">Pause Music</button>
+    <button id="nextMusicBtn">Next ⏭️</button>
+  </div>
 
   <footer>
     <p>© 2026 <span>GameFinity</span> | JavaScript Game Development Project</p>
   </footer>
 
   <script>
-    const musicBtn=document.getElementById('musicBtn');
-    const bgMusic=document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const nextMusicBtn = document.getElementById('nextMusicBtn');
 
+    let bgMusic=null;
+    let currentTrack=-1;
+    const TOTAL_TRACKS=11;
+
+    function playRandomMusic(){
+      if(bgMusic)
+      {
+        bgMusic.pause();
+      }
+
+      let nextTrack;
+      do
+      {
+        nextTrack=Math.floor(Math.random()*TOTAL_TRACKS);
+      }
+      while(nextTrack==currentTrack);
+
+      currentTrack=nextTrack;
+      bgMusic=new Audio(`Assets/bgAudio/${currentTrack}.mp3`);
+      bgMusic.loop=true;
+      bgMusic.volume=0.6;
+      bgMusic.play();
+
+      musicBtn.textContent='Pause Music';
+    }
+
+    //Play music on page load
+    playRandomMusic();
+
+    //Pause/Play
     musicBtn.addEventListener('click',()=>{
-      if(bgMusic.paused){
+      if(bgMusic.paused)
+      {
         bgMusic.play();
         musicBtn.textContent='Pause Music';
-      }else{
+      }
+      else
+      {
         bgMusic.pause();
         musicBtn.textContent='Play Music';
       }
     });
+
+    // Next Music
+    nextMusicBtn.addEventListener('click', playRandomMusic);
   </script>
 
 </body>
