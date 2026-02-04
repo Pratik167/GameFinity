@@ -18,7 +18,7 @@ class Box {
         }
         this.isDead = false
         this.color = "red"
-        this.smash = new Audio("./sound.ogg")
+        this.smash = new Audio("./antdead.ogg")
         this.image = new Image()
         this.image.src = "./spider01.png"
         this.imageIndexX = 0
