@@ -65,10 +65,7 @@
         <p>Smash some ants</p>
       </div>
     </a>
-
   </section>
-
-  <!--Music Controls-->
   <div class="music-controls">
     <button id="musicBtn">Pause Music</button>
     <button id="nextMusicBtn">Next ⏭️</button>
@@ -107,11 +104,7 @@
 
       musicBtn.textContent='Pause Music';
     }
-
-    //Play music on page load
     playRandomMusic();
-
-    //Pause/Play
     musicBtn.addEventListener('click',()=>{
       if(bgMusic.paused)
       {
@@ -124,8 +117,6 @@
         musicBtn.textContent='Play Music';
       }
     });
-
-    // Next Music
     nextMusicBtn.addEventListener('click', playRandomMusic);
   </script>
 
