@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GameFinity | JS Game Hub</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,55 +16,118 @@
   </header>
 
   <section class="games-container">
-
+      <!-- SadakFighter -->
     <a href="https://pratik167.github.io/Sadak_Fighter/" target="_blank" class="game-card">
-      <img src="Assets/pngs/SadakFighters.png" alt="Sadak Fighters">
+      <div class="media">
+        <img src="Assets/pngs/SadakFighters.png" alt="Sadak Fighters">
+
+        <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/sadakFighter.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <div class="game-info">
         <h3>Sadak Fighters</h3>
         <p>Fast-paced 2D fighting game built with JavaScript.</p>
       </div>
     </a>
 
+    <!-- ActionStrike -->
+    <a href="https://sujalbaidhya.github.io/game/" target="_blank" class="game-card">
+      <div class="media">
+        <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/actionStrike.mp4" type="video/mp4">
+        </video>
+        <img src="Assets/pngs/actionStrike.png" alt="actionStrike">
+      </div>
+
+      <div class="game-info">
+        <h3>Action Strike</h3>
+        <p>Kill some foes</p>
+      </div>
+    </a>
+
+    <!-- runeWalk -->
+    <a href="https://runewalk.netlify.app" target="_blank" class="game-card">
+      <div class="media">
+        <img src="" alt="runeWalk">
+        <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/runeWalk.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="game-info">
+        <h3>Rune Walk</h3>
+        <p>Catch Creatures</p>
+      </div>
+    </a>
+    <!-- Antarisk -->
     <a href="https://pratik167.github.io/antarisk-shooter/" target="_blank" class="game-card">
-      <img src="Assets/pngs/antariskShooter.png" alt="Antarisk Shooter">
+      <div class="media">
+        <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/antariskShooter.mp4" type="video/mp4">
+        </video>
+        <img src="Assets/pngs/antariskShooter.png" alt="Antarisk Shooter">
+      </div>
       <div class="game-info">
         <h3>Antarisk Shooter</h3>
         <p>Defend Against The Space Aliens</p>
       </div>
     </a>
-
+    <!-- eggGame -->
     <a href="https://pratik167.github.io/eggGame/" target="_blank" class="game-card">
+      <div class="media">
       <img src="Assets/pngs/eggCatcher.png" alt="Egg Catcher">
+      <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/eggGame.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="game-info">
         <h3>Egg Catcher</h3>
         <p>Simply Catch Eggs in a Bucket</p>
       </div>
     </a>
-
+    <!-- Pong -->
     <a href="https://pratik167.github.io/PONG_GAME/" target="_blank" class="game-card">
-      <img src="Assets/pngs/pong.png" alt="Pong">
+      <div class="media">
+        <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/pong.mp4" type="video/mp4">
+        </video>
+        <img src="Assets/pngs/pong.png" alt="Pong">
+      </div>
       <div class="game-info">
         <h3>Pong</h3>
         <p>Old Arcade Pong</p>
       </div>
     </a>
-
+    <!-- udhne chara -->
     <a href="https://sujalbaidhya.github.io/flapbir/" target="_blank" class="game-card">
-      <img src="Assets/pngs/UdhneChara.png" alt="Udhne Chara">
+      <div class="media">
+        <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/udhneChara.mp4" type="video/mp4">
+        </video>
+        <img src="Assets/pngs/UdhneChara.png" alt="Udhne Chara">
+      </div>
       <div class="game-info">
         <h3>Udhne Chara</h3>
         <p>Just Some Udhne Chara</p>
       </div>
     </a>
-
-    <a href="https://sujalbaidhya.github.io/ant/" target="_blank" class="game-card">
-      <img src="Assets/pngs/antSmasher.png" alt="makdaSmasher">
+    <!-- makdaSmash -->
+    <a href="https://pratik167.github.io/makdaSmasher/" target="_blank" class="game-card">
+      <div class="media">
+        <video class="preview" muted loop preload="none">
+          <source src="Assets/previews/makdaSmasher.mp4" type="video/mp4">
+        </video>
+        <img src="Assets/pngs/antSmasher.png" alt="makdaSmasher">
+      </div>
       <div class="game-info">
         <h3>Ant Smasher</h3>
         <p>Smash some ants</p>
       </div>
     </a>
+
   </section>
+
   <div class="music-controls">
     <button id="musicBtn">Pause Music</button>
     <button id="nextMusicBtn">Next ⏭️</button>
@@ -84,17 +146,12 @@
     const TOTAL_TRACKS=11;
 
     function playRandomMusic(){
-      if(bgMusic)
-      {
-        bgMusic.pause();
-      }
+      if(bgMusic) bgMusic.pause();
 
       let nextTrack;
-      do
-      {
+      do{
         nextTrack=Math.floor(Math.random()*TOTAL_TRACKS);
-      }
-      while(nextTrack==currentTrack);
+      }while(nextTrack==currentTrack);
 
       currentTrack=nextTrack;
       bgMusic=new Audio(`Assets/bgAudio/${currentTrack}.mp3`);
@@ -104,20 +161,35 @@
 
       musicBtn.textContent='Pause Music';
     }
+
     playRandomMusic();
+
     musicBtn.addEventListener('click',()=>{
-      if(bgMusic.paused)
-      {
+      if(bgMusic.paused){
         bgMusic.play();
         musicBtn.textContent='Pause Music';
-      }
-      else
-      {
+      }else{
         bgMusic.pause();
         musicBtn.textContent='Play Music';
       }
     });
+
     nextMusicBtn.addEventListener('click', playRandomMusic);
+
+    /*VID PREVIEW*/
+    document.querySelectorAll('.game-card').forEach(card => {
+      const video = card.querySelector('video');
+      if (!video) return;
+
+      card.addEventListener('mouseenter', () => {
+        video.currentTime = 0;
+        video.play();
+      });
+
+      card.addEventListener('mouseleave', () => {
+        video.pause();
+      });
+    });
   </script>
 
 </body>
